@@ -1,0 +1,111 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #DDF2D1, #a3c585, #87ab69);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #3A5A40;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#taskInput {
+    padding: 10px 15px;
+    border-radius: 2px solid #f48fb1;
+    outline: none;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#addBtn {
+    padding: 10px 15px;
+    background: #f48fb1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#addBtn:hover {
+    background: #ec407a;
+}
+
+ul#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 300px;
+}
+
+ul#taskList li {
+    background-color: #fff0f5;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Circle in front of the task */
+.circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid pink;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+/* Filled circle when checked */
+.circle.checked {
+    background-color: pink;
+}
+
+/* Task text when completed */
+ul#taskList li.completed span:nth-child(2) {
+    text-decoration: line-through;
+    color: lightpink;
+    opacity: 0.7;
+}
+
+#progressContainer {
+    position: fixed;
+    /* stays in the corner even when scrolling*/
+    top: 2opx;
+    right: 20px;
+    width: 200px;
+    height: 20px;
+    background-color: #ffe6f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#progressBar {
+    height: 100px;
+    width: 0%;
+    /* start at empty */
+    background-color: #ff69b4;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
