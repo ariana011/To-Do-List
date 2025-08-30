@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Create the task <li>
         const li = document.createElement("li");
 
+        // create container for circle + text
+        const taskContainer = document.createElement("div");
+        taskContainer.style.display = "flex";
+        taskContainer.style.alignItems = "center";
+
         // Create the circle element
         const circle = document.createElement("span");
         circle.classList.add("circle"); // Will style in CSS
@@ -43,9 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const textSpan = document.createElement("span");
         textSpan.textContent = taskText;
 
+        // create delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "X";
+        deleteBtn.classList.add("deleteBtn");
+
+        //clicking delete button removes the task
+        deleteBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); // prevent circle click
+            li.remove(); // remove task
+            updateProgress(); // update progress bar
+        })
         // Append circle and text to the task <li>
         li.appendChild(circle);
         li.appendChild(textSpan);
+        li.appendChild(deleteBtn); // delete button at the end
 
         // Add the task to the list
         taskList.appendChild(li);

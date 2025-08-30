@@ -55,12 +55,13 @@ ul#taskList {
 }
 
 ul#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #fff0f5;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 15px;
-    display: flex;
-    align-items: center;
     cursor: pointer;
     transition: background 0.3s;
 }
@@ -108,4 +109,36 @@ ul#taskList li.completed span:nth-child(2) {
     background-color: #ff69b4;
     border-radius: 10px;
     transition: width 0.3s ease;
+}
+
+.deleteBtn {
+    margin-left: 10px;
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 2px 6px;
+}
+
+.deleteBtn:hover {
+    background-color: #ff69b4;
+}
+
+#snoopyContainer {
+    position: fixed;
+    /* stay in place even when scrolling */
+    bottom: 20px;
+    /* 20px from bottom */
+    right: 20px;
+    /* 20px from right */
+    z-index: 10;
+    /* sit above background content */
+}
+
+
+#snoopyContainer img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
