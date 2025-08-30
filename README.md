@@ -14,7 +14,7 @@ A cute and cozy to-do list web app with:
 - 🐶 Snoopy image stays in the bottom-right corner while scrolling
 
   # View Website Live
-[Live Demo](https://github.com/ariana011/To-Do-List) 🌸
+[Live Demo](http://127.0.0.1:5500/index.html) 🌸
 
 
 ## How to Use
