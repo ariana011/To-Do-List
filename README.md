@@ -13,8 +13,7 @@ A cute and cozy to-do list web app with:
 - 📊 Progress bar shows your productivity
 - 🐶 Snoopy image stays in the bottom-right corner while scrolling
 
-  # View Website Live
-[Live Demo](http://127.0.0.1:5500/index.html) 🌸
+ [Cozy To-Do List Screenshot](assets/snoopyingrass.png)
 
 
 ## How to Use
