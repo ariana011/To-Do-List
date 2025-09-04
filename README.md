@@ -1,4 +1,4 @@
-# To-Do List 🌸
+# To-Do List 🌸 '
 
 A cute and cozy to-do list web app with:  
 - Circle checkmarks to cross off tasks  
@@ -15,6 +15,7 @@ A cute and cozy to-do list web app with:
 
   # Future additions
   - implement animations
+  - round add task input to make it smoother
 
 # To Do List Screenshot
 <img width="732" height="730" alt="To-Do-List" src="https://github.com/user-attachments/assets/38ff40c0-0910-4288-b1b6-cdb1354a8a1a" />
