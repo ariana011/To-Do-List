@@ -4,17 +4,56 @@ document.addEventListener("DOMContentLoaded", () => {
     const addBtn = document.getElementById("addBtn"); // Add button
     const taskInput = document.getElementById("taskInput"); // Input box
     const progressBar = document.getElementById("progressBar"); // progress bar 
+    const modal = document.getElementById("doneModal"); // modal pop up
+
+    // track of modal/confetti already fired
+    let celebrationShown = false;
+
     // progress bar function
     function updateProgress() {
         const allTasks = taskList.querySelectorAll("li");
         const completedTasks = taskList.querySelectorAll("li.completed");
+
         if (allTasks.length === 0) {
             progressBar.style.width = "0%";
+            celebrationShown = false; // reset flag if list is empty
             return;
         }
-        const percent = (completedTasks.length / allTasks.length) * 100;
+
+        const percent = Math.round((completedTasks.length / allTasks.length) * 100);
         progressBar.style.width = percent + "%";
+
+        // only trigger modal + confetti if all tasks are complete and it hasnt fired yet
+        if (percent === 100 && !celebrationShown) {
+            launchConfetti();
+            modal.style.display = "flex";
+            celebrationShown = true; // prevent repeat
+
+            // reset flag if user unchecks or deletes a task
+            if (percent < 100) {
+                celebrationShown = false;
+            }
+        }
     }
+
+    // conftti function
+    function launchConfetti() {
+        var duration = 2 * 1000;
+        var end = Date.now() + duration;
+
+        (function frame() {
+            confetti({ particleCount: 5, angle: 60, spread: 50, origin: { x: 0 } });
+            confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
+
+            if (Date.now() < end) requestAnimationFrame(frame);
+        })();
+    }
+
+    // close modal function
+    window.closeModal = function () {
+        modal.style.display = "none";
+    }
+
     // When the Add button is clicked
     addBtn.addEventListener("click", () => {
         const taskText = taskInput.value.trim(); // Get user input and remove spaces
