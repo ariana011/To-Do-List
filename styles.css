@@ -185,3 +185,82 @@ ul#taskList li.completed span:nth-child(2) {
     height: 200px;
     border-radius: 15px;
 }
+
+/* THEME TOGGLE BUTTON */
+.theme-toggle {
+    font-size: 10px;
+    /* bigger icon */
+    width: 120px;
+    height: 30px;
+    border: 2px solid;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.theme-toggle:hover {
+    background: #ffd3f6;
+    transform: scale(1.1);
+}
+
+body.dark-mode {
+    background: url("assets/stars-bg.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.dark-mode h1 {
+    color: #a1d0ed;
+}
+
+.dark-mode p {
+    color: #D6C7F9;
+}
+
+body.dark-mode #taskList li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Completed tasks (dark mode) */
+body.dark-mode #taskList li.completed {
+    color: #1e3a8a;
+    /* dark blue text */
+    text-decoration-line: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #1e3a8a;
+}
+
+/* Optional: glow effect for active tasks in dark mode */
+body.dark-mode #taskList li:not(.completed) {
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+    /* subtle gold glow */
+}
+
+/* Circle when checked (light mode) */
+.circle.checked {
+    background: #6bbf73;
+    /* green fill */
+    border-color: #6bbf73;
+}
+
+/* Circle (dark mode) */
+body.dark-mode .circle {
+    border: 2px solid #5d4ee4;
+}
+
+/* Circle when checked (dark mode) */
+body.dark-mode .circle.checked {
+    background: #5d4ee4;
+    /* golden star color */
+    border-color: #5d4ee4;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+}
+
+/* Delete button (dark mode) */
+body.dark-mode .deleteBtn {
+    background: #5d4ee4;
+}

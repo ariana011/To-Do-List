@@ -5,6 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskInput = document.getElementById("taskInput"); // Input box
     const progressBar = document.getElementById("progressBar"); // progress bar 
     const modal = document.getElementById("doneModal"); // modal pop up
+    const themeToggle = document.getElementById("themeToggle"); // dark theme mode
+
+    // toggle dark mode
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // change icon depending on theme
+        if (document.body.classList.contains("dark-mode")) {
+            themeToggle.textContent = "Light Mode ☀️";
+        } else {
+            themeToggle.textContent = "Dark Mode 🌙";
+        }
+    });
 
     // track of modal/confetti already fired
     let celebrationShown = false;
@@ -36,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // conftti function
+    // confetti function
     function launchConfetti() {
         var duration = 2 * 1000;
         var end = Date.now() + duration;
