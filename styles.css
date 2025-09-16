@@ -218,11 +218,13 @@ body.dark-mode {
 }
 
 .dark-mode p {
-    color: #D6C7F9;
+    color: #351d6c;
 }
 
 body.dark-mode #taskList li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0ff;
 }
 
 /* Completed tasks (dark mode) */
@@ -240,6 +242,35 @@ body.dark-mode #taskList li:not(.completed) {
     /* subtle gold glow */
 }
 
+body.dark-mode #taskList li.completed span:nth-child(2) {
+    text-decoration: line-through;
+    color: #7a8ba0;
+    /* softer gray-blue for contrast */
+    opacity: 0.9;
+}
+
+
+body.dark-mode #addBtn {
+    background: #5d4ee4;
+    /* a purple shade for dark mode */
+    color: white;
+}
+
+body.dark-mode #addBtn:hover {
+    background: #4338ca;
+    /* darker purple when hovered */
+}
+
+body.dark-mode #progressContainer {
+    background-color: #2d2d54;
+    /* darker container background */
+}
+
+body.dark-mode #progressBar {
+    background-color: #a1d0ed;
+    /* light blue for progress fill */
+}
+
 /* Circle when checked (light mode) */
 .circle.checked {
     background: #6bbf73;
@@ -251,6 +282,7 @@ body.dark-mode #taskList li:not(.completed) {
 body.dark-mode .circle {
     border: 2px solid #5d4ee4;
 }
+
 
 /* Circle when checked (dark mode) */
 body.dark-mode .circle.checked {
